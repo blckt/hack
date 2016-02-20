@@ -1,9 +1,14 @@
 $(function() {
-    var a=document.querySelectorAll('a[href*="#"]');
-    console.log(a);
-    for(var i=0;i<a.length;i++){
-        a[i].addEventListener('click',function (e) {
-            console.log(this.href);
-        })
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 800);
+        return false;
+      }
     }
+  });
 });
