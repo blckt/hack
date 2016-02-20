@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta name="http-equiv" content="Content-type: text/html; "charset="UTF-8">
+</head>
+<body>
+<header>
+<center>
+<h1>
+Помоги зажечь планету!
+</h1>
+</center>
+</header>
+
+
+<br>
+
+<style>
+input[type="button"]{
+margin-left: 150px;
+
+}
+body{
+background: url(space-out.jpg);
+color:white;
+}
+
+label{
+display: inline-block;
+ width: 130px;
+  height: 210px;
+background: url(led-out.png);
+}
+
+input[type="checkbox"] { 
+display: none; 
+} 
+ input[type="checkbox"]:checked + label{
+background: url(led-in.png);
+ }
+ 
+</style>
+<div id="task"></div>
+<br><br>
+<input type="checkbox" id="ch8"/>
+<label for="ch8" >8</label>
+
+<input type="checkbox" id="ch4"/>
+<label for="ch4">4</label>
+
+<input type="checkbox" id="ch2"/>
+<label for="ch2">2</label>
+
+<input type="checkbox" id="ch1"/>
+<label for="ch1">1</label>
+<br><br><br><br>
+<input type="button" value="OK" OnClick="leds();"/><br><br>
+<div id="answer"></div>
+<br>
+  <script type="text/javascript" charset="UTF-8">
+
+  
+  var task=1;
+  
+  
+document.getElementById("task").innerHTML = '<h1><b>Переведи число 5 в двоичную систему</b></h1>(выключенная лампочка это 0, включенная - 1)';
+function leds(){
+
+switch (task){
+case 1: {
+if (document.getElementById("ch1").checked&&document.getElementById("ch4").checked&&!document.getElementById("ch2").checked&&!document.getElementById("ch8").checked)
+{
+document.getElementById("answer").innerHTML = '<h2><b>Правильно</b></h2>';
+task=2;
+document.getElementById("task").innerHTML = '<h1><b>Переведи число 12 в двоичную систему<br></b></h1>(выключенная лампочка это 0, включенная - 1)';
+document.body.style.backgroundImage = "url('light-small.jpg')";}
+else{ document.getElementById("answer").innerHTML = '<h2><b>Попробуй еще раз</b></h2>';
+}
+break;
+}
+case 2:{
+if (document.getElementById("ch8").checked&&document.getElementById("ch4").checked&&!document.getElementById("ch1").checked&&!document.getElementById("ch2").checked)
+{
+document.getElementById("answer").innerHTML = '<h2><b>Правильно</b></h2>';
+document.body.style.backgroundImage = "url('light-big.jpg')";
+}
+else{  document.getElementById("answer").innerHTML = '<h2><b>Попробуй еще раз</b></h2>';
+}
+break;
+
+
+}
+
+
+}
+
+
+
+
+
+ 
+  }
+ 
+</script>
+</body>
+</html>
