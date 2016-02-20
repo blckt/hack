@@ -3,17 +3,19 @@ a{
     text-decoration: none;
     color: #d1f5f8;
 }
-
+@import url(https://fonts.googleapis.com/css?family=Lato);
 @mixin border-radius($radius){
     
 }
 body{
     padding-top: 50px;
+    font-family: 'Lato',sans-serif;
 }
 header{
     nav{
         position: fixed;
         display: flex;
+        top: 0;
         justify-content: space-around;
         width: 100%;
         height: 50px;
@@ -45,7 +47,113 @@ header{
     div{
         height: 800px;
         width: 100%;
-        background-color: pink;
-        border: 1px solid black;
+        background-color: #ffffff;
+      
+        &#slide4{
+            .openDialog{
+                &:hover{
+                    background-color: 	#81e4e6; 
+                    font-size: 27px;
+                }
+                font-size: 18px;
+                background-color: #d1f5f8;
+                transition: background-color 1s ease-in-out,font-size 1.5s ease-in-out;
+                border:none;
+                outline: none;
+                position: absolute;
+                bottom: 2%;
+                left: 35%;
+                height: 3%;
+                width: 30%;
+            }
+            #regForm{
+             display: none;
+           div{
+               height: auto;
+           }
+                position: fixed;
+                left: 0;
+                top: 0;
+                
+                background: rgba(196,206,255, 0.4);
+                width: 100%;
+                height: 100%;
+                z-index: 1000;
+                .reg-form{
+                      position: fixed;
+            left: 20%;
+             top: 15%;
+                 width: 60%;
+                height: 70%;
+                background-color: white;
+                 
+                .content{
+                   &.dialog{
+                       border: none;
+                       form{
+                           .field{
+                               width: 40%;
+                               margin: 30px auto;
+                            label{
+                                width: 30%;
+                                display: inline-block;
+                                 white-space: nowrap;
+                                margin: 10px 0;
+                            }  
+                            input{
+                                float: right;
+                                width: 100%;
+                                &[type="submit"]{
+                                    @extend .button;
+                                    outline: none;
+                                    border: none;
+                                    margin: 0 auto;
+                                    border-radius: 6%;
+                                    position: absolute;
+                                    
+                                }
+                            }
+                           }
+                       }
+                   }
+                }
+                   header{
+                     
+                      h1{
+                          padding-top: 2%;
+                          padding-left: 4%;
+                         font-weight: bold;
+                      }
+                      button{
+                          position: absolute;
+                          right: 0;
+                          top: 0;
+                          border: none;
+                          outline: none;
+                          background-color: inherit;
+                          transition: background-color 0.5s,color 0.5s;
+                          &:hover{
+                              background-color: #a3a3a3;
+                              color: white;
+                          }
+                      }
+                      height: 10%;
+                      border-bottom: 1px solid #a3a3a3;
+                   }
+                   
+                }
+            }
+        }
     }
+}
+.button{
+    width: 150px;
+    height: 40px;
+       &:hover{
+                    background-color: 	#81e4e6; 
+             }
+             
+                background-color: #d1f5f8;
+                transition: background-color 1s ease-in-out,font-size 1.5s ease-in-out;
+    
 }
