@@ -39,9 +39,9 @@ header {
         line-height: 35px;
         background-size: 100%; }
         header nav ul li:first-child {
-          background-image: url("../img/shape1.png"); }
+          background-image: url("../img/Shape1.png"); }
         header nav ul li:nth-child(2) {
-          background-image: url("../img/shape2.png"); }
+          background-image: url("../img/Shape2.png"); }
         header nav ul li:nth-child(3) {
           background-image: url("../img/shape3.png"); }
         header nav ul li:nth-child(4) {
