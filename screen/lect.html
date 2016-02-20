@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta name="http-equiv" content="Content-type: text/html; "charset="UTF-8">
+</head>
+<body>
+<header>
+<center>
+
+</center>
+</header>
+
+
+<br>
+
+<style>
+
+
+body{
+background: url(back.jpg);
+color:white;
+}
+#screen{
+background: url(screen.png);
+width:640px;
+ height:482px;
+ transform: rotateX(90deg);
+ transition: transform 2s;
+}
+.dialog{
+background-size:90%;
+background-image: url(dialog11.png);
+background-repeat: no-repeat;
+width:0;
+ height:282px;
+    position: absolute;
+    right: 80px;
+    top: 50px;
+    
+    transition:  width 2s;
+    
+}
+.open{
+    width: 440px;
+}
+
+
+</style>
+<div id="screen" >
+</div>
+
+<div class="dialog"> 
+</div>
+
+<script>
+var screen=document.querySelector('#screen');
+var dialog=document.querySelector('.dialog');
+var img=document.createElement('img');
+setTimeout(function(){
+    
+    dialog.classList.add('open');
+    setTimeout(function(){
+        screen.style.transform="rotateX(0deg)";
+        setTimeout(function(){
+            
+            img.src='screen1.png';
+            screen.appendChild(img);
+            setTimeout(function(){
+                img.src='screen2.png';
+                setTimeout(function(){
+                  location.replace('https://hackaton-blckt.c9users.io/main/task');  
+                },3000)
+            },3000)
+        },1000);
+    },1500)
+},500);
+</script>
+</body>
+</html>
